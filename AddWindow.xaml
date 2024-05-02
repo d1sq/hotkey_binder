@@ -1,0 +1,19 @@
+﻿<Window x:Class="mic_switcher_gui.AddWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:local="clr-namespace:mic_switcher_gui"
+        mc:Ignorable="d"
+        Title="AddWindow" Height="200" Width="400" KeyDown="Window_KeyDown">
+    <Grid>
+        <TextBox x:Name="InputTextBox" IsReadOnly="True"  TextAlignment="Center" Width="200" Height="20" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,30,0,0"/>
+
+        <ComboBox x:Name="ComboBoxInput" Width="200" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0, 60,0,0" ItemsSource="{Binding AudioDevices}">
+        </ComboBox>
+
+        <Button Content="✔️" Width="60" VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="5,0,50,5" Click="OkButtonClick"/>
+
+        <Button Content="❌" Width="60" VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="90,0,0,5" Click="CancelButtonClick"/>
+    </Grid>
+</Window>

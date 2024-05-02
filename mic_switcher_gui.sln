@@ -1,0 +1,16 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "mic_switcher_gui", "mic_switcher_gui.csproj", "{7A11F9DA-9F78-470A-987C-158EE6D2812E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7A11F9DA-9F78-470A-987C-158EE6D2812E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7A11F9DA-9F78-470A-987C-158EE6D2812E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7A11F9DA-9F78-470A-987C-158EE6D2812E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7A11F9DA-9F78-470A-987C-158EE6D2812E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
