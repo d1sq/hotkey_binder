@@ -6,7 +6,6 @@
         xmlns:local="clr-namespace:mic_switcher_gui"
         mc:Ignorable="d"
         Title="MainWindow" Height="420" Width="500" ResizeMode="NoResize">
-    
     <Grid>
         <Button Content="➕" Width="60" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="0,20,0,0" Click="AddButtonClick"/>
         

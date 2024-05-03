@@ -1,6 +1,6 @@
 ﻿using System.Windows;
 using System.Collections.ObjectModel;
-
+using System.ComponentModel;
 
 
 namespace mic_switcher_gui;
@@ -13,18 +13,31 @@ public partial class MainWindow : Window
     public ObservableCollection<string> AudioDevices { get; set; }
     
     public ObservableCollection<BindingDataModel> BindingData { get; set; }
-
+    private TrayIconManager _trayIconManager;
     
+    
+    protected override void OnClosing(CancelEventArgs e)
+    {
+        // Перехватываем закрытие окна и скрываем его в трей
+        e.Cancel = true;
+        Hide();
+    }
     public MainWindow()
     {
         InitializeComponent();
         
         BindingData = new ObservableCollection<BindingDataModel>();
-
+        
+        _trayIconManager = new TrayIconManager(this);
+        
         AudioDevices = new AudioDeviceManager().GetAudioDevices();
         DataContext = this;
-    }
+        var audioDeviceManager = new AudioDeviceManager();
 
+        audioDeviceManager.SetDefaultCommunicationDevice("Микрофон (3- USB Audio Device)");
+    }
+    
+    
 
     private void AddButtonClick(object sender, RoutedEventArgs e)
     {
@@ -32,23 +45,19 @@ public partial class MainWindow : Window
         addWindow.Owner = this;
         addWindow.ShowDialog();
         
-        Console.WriteLine(addWindow.TextBoxValue);
-        Console.WriteLine(addWindow.ComboBoxValue);
-
-       
         BindingData.Add(new BindingDataModel {Device = addWindow.TextBoxValue, Hotkey = addWindow.ComboBoxValue});
-        
     }
     
     private void RemoveButtonClick(object sender, RoutedEventArgs e)
-    {
-        BindingDataModel selectedItem = (BindingDataModel)DataGrid.SelectedItem;
+{
+    BindingDataModel selectedItem = (BindingDataModel)DataGrid.SelectedItem;
 
-        if (selectedItem != null)
-        {
-            BindingData.Remove(selectedItem);
-        }
+    if (selectedItem != null)
+    {
+        BindingData.Remove(selectedItem);
+        
     }
+}
 }
 
 /*

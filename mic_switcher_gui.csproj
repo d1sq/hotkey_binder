@@ -11,6 +11,7 @@
     <ItemGroup>
       <PackageReference Include="AudioSwitcher.AudioApi" Version="4.0.0-alpha5" />
       <PackageReference Include="AudioSwitcher.AudioApi.CoreAudio" Version="4.0.0-alpha5" />
+      <PackageReference Include="Hardcodet.NotifyIcon.Wpf" Version="1.1.0" />
       <PackageReference Include="NAudio" Version="2.2.1" />
     </ItemGroup>
 
